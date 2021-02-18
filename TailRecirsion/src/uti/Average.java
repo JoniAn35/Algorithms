@@ -14,20 +14,20 @@ public class Average {
 			nums[i] = sc.nextInt();
 		}
 		
-		System.out.println("The avegare of the numbers is " + average(nums));
-	}
-
-	public static double average(int[] n) {
-		return sum(n, 0) / 10;
+		System.out.println("The avegare of the numbers is " + average(nums, 0, 1));
 	}
 	
-	private static double sum(int[] n, double result) {
+	public static double average(int[] n, double result, int i) {
 		int size = n.length;
 		if(size == 0) {
 			return result;
 		}
 		else {
-			return sum(Arrays.copyOf(n, n.length-1), result + n[size - 1]);
+			return average(
+					Arrays.copyOf(n, n.length-1), 
+					(result * (i - 1) + n[size - 1]) / i, 
+					i+1);
 		}
 	}
+	
 }
