@@ -18,27 +18,18 @@ public class OddOrEven {
 	}
 	
 	public static boolean odd(int n) {
-		if (n == 1) {
-			return true;
+		if (n < 2) {
+			return n == 1;
 		}
-		else if (n == 0) {
-			return false;
-		}
-		else {
-			return odd(n - 2);
-		}
+		return odd(n - 2);
 	}
 	
 	public static boolean even(int n) {
-		if (n == 1) {
-			return false;
+		if (n < 2) {
+			return n == 0;
 		}
-		else if (n == 0) {
-			return true;
-		}
-		else {
-			return even(n - 2);
-		}
+		return even(n - 2);
+		
 	}
 
 }
