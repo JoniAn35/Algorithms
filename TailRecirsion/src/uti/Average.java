@@ -14,10 +14,10 @@ public class Average {
 			nums[i] = sc.nextInt();
 		}
 		
-		System.out.println("The avegare of the numbers is " + average(nums, size));
+		System.out.println("The avegare of the numbers is " + average(nums));
 	}
 
-	public static double average(int[] n, int size) {
+	public static double average(int[] n) {
 		return sum(n, 0) / 10;
 	}
 	
