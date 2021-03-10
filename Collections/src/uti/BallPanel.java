@@ -43,40 +43,40 @@ class BallPanel extends JPanel {
 		return false;
 	}
 
-
 	public BallPanel() {
 		timer.start();
 		addMouseListener(new MouseListener() {
-			
+
 			@Override
 			public void mouseReleased(MouseEvent e) {
 			}
-			
+
 			@Override
 			public void mousePressed(MouseEvent e) {
 			}
-			
+
 			@Override
 			public void mouseExited(MouseEvent e) {
 			}
-			
+
 			@Override
 			public void mouseEntered(MouseEvent e) {
 			}
-			
+
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				System.out.println("click");
-				for (int i = 0; i < list.size(); i ++) {
-					Ball ball = list.get(i);
-					double distance = Math.sqrt(Math.pow(ball.x - e.getX(), 2) + Math.pow(ball.y - e.getY(), 2));
+				Ball ball;
+				double distance;
+				for (int i = 0; i < list.size(); i++) {
+					ball = list.get(i);
+					distance = Math.sqrt(Math.pow(ball.x - e.getX(), 2) + Math.pow(ball.y - e.getY(), 2));
 					if (distance < (ball.radius)) {
-							list.remove(ball);
+						list.remove(ball);
 					}
 				}
 			}
-		}
-		);
+		});
 	}
 
 	public void add() {
@@ -108,9 +108,7 @@ class BallPanel extends JPanel {
 			ball.x += ball.dx;
 			ball.y += ball.dy;
 			g.fillOval(ball.x - ball.radius, ball.y - ball.radius, ball.radius * 2, ball.radius * 2);
-			
-			
-			
+
 		}
 	}
 
