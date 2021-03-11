@@ -65,7 +65,6 @@ class BallPanel extends JPanel {
 
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				System.out.println("click");
 				Ball ball;
 				double distance;
 				for (int i = 0; i < list.size(); i++) {
