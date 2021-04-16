@@ -9,8 +9,6 @@ import java.util.TreeMap;
 public class Capitals {
 
 	public static void main(String[] args) {
-		// /Users/yoanaangelova/Desktop/java/Algorithms/Maps/src/uti/CountriesOfEurope.txt
-		// /Users/yoanaangelova/Desktop/java/Algorithms/Maps/src/uti/CountriesOfEurope.txt"
 		Scanner readText = new Scanner(
 				Capitals.class.getResourceAsStream("CountriesOfEurope.txt")); 
 		Map<String, String> countriesOfEurope = new TreeMap<>();
@@ -31,8 +29,8 @@ public class Capitals {
 			answear = sc.next();
 			if(!answear.equals("exit")) {
 				if (answear.equals(countriesOfEurope.get(country))) {
-				points++;
-				System.out.println("Correct. You have " + points + " points.");
+					points++;
+					System.out.println("Correct. You have " + points + " points.");
 				}
 				else {
 					points--;
