@@ -9,17 +9,27 @@ public class IncreasingSequence {
 		System.out.println("Enter a string: ");
 		String s = sc.next();
 		
-		String sequence = "";
-		sequence += s.charAt(0); 
-		int ascii = (int)s.charAt(0);
+		String sequence = ""; 
+		int ascii = 0;
 		int n = s.length();
 		char symbol;
-		// O(n)
-		for(int i = 1; i < n; i++) {
-			symbol = s.charAt(i);
-			if(ascii < (int)symbol) {
-				sequence += symbol;
-				ascii = (int)symbol;
+		int max = 0;
+		// O(n^2)
+		for (int i = 0; i < n; i++) {
+			int currentMax = 0;
+			String currentSequence = s.substring(i, i + 1);
+			ascii = (int)s.charAt(i);
+			for(int j = i + 1; j < n; j++) {
+				symbol = s.charAt(j);
+				if(ascii < (int)symbol) {
+					currentSequence += symbol;
+					ascii = (int)symbol;
+					currentMax++;
+				}
+			}
+			if(max < currentMax) {
+				max = currentMax;
+				sequence = currentSequence;
 			}
 		}
 		System.out.println(sequence);
