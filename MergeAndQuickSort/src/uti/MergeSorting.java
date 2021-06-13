@@ -55,12 +55,12 @@ public class MergeSorting<T> {
 	
 	public static <T> void mergeSort(T[] list, Comparator <? super T> comparator) {
 		if (list.length > 1) {
-			T[] firstHalf = (T[])new Comparable[list.length / 2];
+			T[] firstHalf = (T[])new Object[list.length / 2];
 			System.arraycopy(list, 0, firstHalf, 0, list.length / 2);
 			mergeSort(firstHalf, comparator);
 
 			int secondHalfLength = list.length - list.length / 2;
-			T[] secondHalf = (T[])new Comparable[secondHalfLength];
+			T[] secondHalf = (T[])new Object[secondHalfLength];
 			System.arraycopy(list, list.length / 2, secondHalf, 0, secondHalfLength);
 			mergeSort(secondHalf, comparator);
 
